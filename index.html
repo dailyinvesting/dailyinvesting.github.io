@@ -1,3 +1,156 @@
-<h1>
-  Hello World
-</h1>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一个打工人写给打工人的实操指南 | Codex 使用指南</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3 {
+            color: #1a1a1a;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 15px;
+        }
+        .author {
+            text-align: center;
+            color: #666;
+            font-size: 1.1em;
+            margin: 20px 0;
+        }
+        .intro {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #007bff;
+            margin: 30px 0;
+        }
+        .scenario {
+            background: #fff;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .prompt {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        .tip {
+            background: #e6f7ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #1890ff;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>一个打工人写给打工人的实操指南</h1>
+    <div class="author">
+        作者：博蓝 (@BolanHsiao) · 2026年5月
+    </div>
+
+    <div class="intro">
+        <h2>写在前面：这篇文章能给你什么</h2>
+        <p>2025 年，OpenAI 官方发布了一篇文章，题目是《Codex 在工作中的十大使用场景》。Codex 已不再只是程序员的工具，而是开始服务于普通知识工作者。</p>
+        <p>本文不是理论，而是**直接可复制的实操指南**。每个场景都配上测试过的 Prompt 模板，你读完就能立刻上手。</p>
+        
+        <h3>三件重要的事</h3>
+        <ul>
+            <li><strong>Codex 是什么？</strong> OpenAI 推出的 AI Agent，对结构化指令和输出极其擅长，特别适合有规则、有重复性的工作。</li>
+            <li><strong>权限要求：</strong> 包含在 ChatGPT Plus、Pro 和 Team 订阅中。</li>
+            <li><strong>能力层次：</strong> 前五个场景（帮你想、帮你写）→ 第六场景（帮你做，操控电脑）。</li>
+        </ul>
+    </div>
+
+    <div class="scenario">
+        <h2>场景一：周报、月报、汇报文档</h2>
+        <h3>手动喂料版（基础版）</h3>
+        <div class="prompt">（此处粘贴你的周报 Prompt 模板）</div>
+
+        <h3>文件直投版</h3>
+        <p>直接上传会议纪要、Excel、聊天记录，让 Codex 直接生成周报。</p>
+
+        <h3>挂机自动版（Automation）</h3>
+        <div class="prompt">每周周报自动生成 Prompt（在 Automations 面板设置）...</div>
+        
+        <div class="tip">
+            <strong>建议：</strong> 从手动喂料版开始，熟悉后再升级到自动化。
+        </div>
+    </div>
+
+    <div class="scenario">
+        <h2>场景二：Excel / 表格数据处理</h2>
+        <p>Codex 可以生成公式、清洗数据、给出分析结论，甚至直接处理上传的文件。</p>
+        
+        <h3>文件直投版</h3>
+        <p>上传 Excel 文件 → 自然语言描述需求 → 下载处理后的新文件。</p>
+
+        <h3>挂机自动版（MCP 插件）</h3>
+        <div class="prompt">批量处理多文件的 Prompt 模板...</div>
+    </div>
+
+    <div class="scenario">
+        <h2>场景三：批量文件处理</h2>
+        <p>适合合同提取、数据合并、文件重命名等重复性工作。</p>
+    </div>
+
+    <div class="scenario">
+        <h2>场景四：撰写各类职场文档</h2>
+        <div class="prompt">项目复盘报告 Prompt：
+[在此粘贴具体 Prompt]</div>
+    </div>
+
+    <div class="scenario">
+        <h2>场景五：竞品与市场研究</h2>
+        <p>支持手动搜索、实时网页抓取、自动化持续监控。</p>
+    </div>
+
+    <div class="scenario">
+        <h2>场景六：Codex 操控你的电脑（Computer Use + Automation）</h2>
+        <p>2026 年重大更新，让 Codex 可以直接看到屏幕、控制鼠标键盘、在后台自动运行。</p>
+        
+        <div class="tip">
+            <strong>重要提醒：</strong> 敏感操作必须加入“每步截图确认”机制。
+        </div>
+    </div>
+
+    <div class="intro">
+        <h2>写在最后：Prompt 写得好，是核心</h2>
+        <p>四个关键要素：背景 + 素材 + 输出格式要求 + 约束条件。</p>
+        
+        <p><strong>效率工具的终点，应该是更好的生活，而不是更多的工作。</strong></p>
+    </div>
+
+    <footer>
+        <p>整理自 X 用户 @BolanHsiao 的长帖<br>
+        https://x.com/BolanHsiao/status/2058148446100656393</p>
+        <p>仅供学习参考 · 请根据自身情况使用</p>
+    </footer>
+</body>
+</html>
