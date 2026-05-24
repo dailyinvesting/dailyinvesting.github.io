@@ -1,334 +1,501 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>打工人的0基础 Codex 手册：6 个实战场景</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f5f5f5;
-      color: #222;
-      line-height: 1.8;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>打工人的0基础 Codex 手册：6 个实战场景（附可复制 Prompt）</title>
 
-    .container {
-      max-width: 860px;
-      margin: 40px auto;
-      background: white;
-      padding: 48px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    }
+<style>
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:#f7f7f7;
+    color:#222;
+    margin:0;
+    padding:0;
+    line-height:1.9;
+}
 
-    h1 {
-      font-size: 38px;
-      line-height: 1.3;
-      margin-bottom: 12px;
-    }
+.container{
+    max-width:920px;
+    margin:40px auto;
+    background:#fff;
+    padding:60px;
+    border-radius:20px;
+    box-shadow:0 10px 40px rgba(0,0,0,.06);
+}
 
-    h2 {
-      margin-top: 48px;
-      font-size: 28px;
-      border-left: 5px solid #111;
-      padding-left: 14px;
-    }
+h1{
+    font-size:42px;
+    line-height:1.35;
+    margin-bottom:20px;
+}
 
-    h3 {
-      margin-top: 36px;
-      font-size: 22px;
-      color: #111;
-    }
+h2{
+    margin-top:60px;
+    font-size:30px;
+    border-left:6px solid #111;
+    padding-left:16px;
+}
 
-    p {
-      margin: 16px 0;
-      color: #333;
-    }
+h3{
+    margin-top:42px;
+    font-size:24px;
+}
 
-    .lead {
-      font-size: 18px;
-      color: #555;
-    }
+p{
+    margin:18px 0;
+    font-size:17px;
+    color:#333;
+}
 
-    .quote {
-      background: #fafafa;
-      border-left: 4px solid #ddd;
-      padding: 16px 20px;
-      margin: 24px 0;
-      color: #444;
-    }
+.lead{
+    font-size:20px;
+    color:#555;
+}
 
-    pre {
-      background: #111;
-      color: #f5f5f5;
-      padding: 20px;
-      border-radius: 10px;
-      overflow-x: auto;
-      line-height: 1.6;
-      font-size: 14px;
-    }
+blockquote{
+    background:#fafafa;
+    border-left:4px solid #ddd;
+    margin:28px 0;
+    padding:18px 24px;
+    color:#555;
+}
 
-    code {
-      font-family: Menlo, Consolas, monospace;
-    }
+pre{
+    background:#111;
+    color:#f5f5f5;
+    padding:24px;
+    border-radius:14px;
+    overflow:auto;
+    font-size:14px;
+    line-height:1.7;
+    margin:24px 0;
+}
 
-    ul {
-      padding-left: 24px;
-    }
+code{
+    font-family:Menlo,Consolas,monospace;
+}
 
-    li {
-      margin: 10px 0;
-    }
+ul,ol{
+    padding-left:28px;
+}
 
-    .section {
-      margin-top: 50px;
-    }
+li{
+    margin:10px 0;
+}
 
-    .footer {
-      margin-top: 60px;
-      padding-top: 30px;
-      border-top: 1px solid #eee;
-      color: #777;
-      font-size: 14px;
-    }
+.section{
+    margin-top:60px;
+}
 
-    .tag {
-      display: inline-block;
-      background: #111;
-      color: white;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      margin-bottom: 16px;
-    }
+.tip{
+    background:#f3f6ff;
+    border:1px solid #dbe4ff;
+    padding:18px 22px;
+    border-radius:12px;
+    margin:24px 0;
+}
 
-    strong {
-      color: #111;
-    }
-  </style>
+.footer{
+    margin-top:80px;
+    border-top:1px solid #eee;
+    padding-top:24px;
+    color:#888;
+    font-size:14px;
+}
+</style>
 </head>
+
 <body>
 
 <div class="container">
 
-  <div class="tag">AI · Codex · 工作流</div>
+<h1>打工人的0基础 Codex 手册：6 个实战场景（附可复制 Prompt）</h1>
 
-  <h1>打工人的0基础 Codex 手册：6 个实战场景（附可复制 Prompt）</h1>
+<p class="lead">
+一个打工人写给打工人的实操指南，1小时工作，7小时摸鱼。
+</p>
 
-  <p class="lead">
-    一个打工人写给打工人的实操指南。不是 AI 概念，不是趋势分析，
-    而是你今天就能复制使用的真实工作流。
-  </p>
+<h2>写在前面：这篇文章能给你什么</h2>
 
-  <div class="quote">
-    1 小时工作，7 小时摸鱼。<br/>
-    前提是：把重复劳动交给 AI。
-  </div>
+<p>
+2025 年，OpenAI 官方发布了一篇文章，题目是《Codex 在工作中的十大使用场景》。
+</p>
 
-  <h2>写在前面：这篇文章能给你什么</h2>
+<p>
+这个举动本身就是一个信号：
+一个曾经被定义为“给程序员用的 AI 编程工具”，开始正式对非技术人员喊话了。
+</p>
 
-  <p>
-    2025 年，OpenAI 官方发布了一篇文章：《Codex 在工作中的十大使用场景》。
-    这件事本身就是一个信号：
-  </p>
+<p>
+OpenAI 列出的十大场景里，排名第一的是“首席参谋”——Codex 帮你整理消息、管理日历、追踪行动项。
+</p>
 
-  <p>
-    一个原本被定义为“程序员 AI 工具”的产品，
-    开始正式面向普通职场人。
-  </p>
+<p>
+这不是一个编程任务，这是知识工作者多年来一直试图用 Zapier、Notion 和各种 AI 助手去自动化但始终没做好的那类工作。
+</p>
 
-  <p>
-    重点甚至已经不是“写代码”，而是：
-  </p>
+<p>
+这就是本文要讲的事：
+不是理论，不是观点，是打工人可以直接复制操作的真实场景，每个场景配上我测试过的 Prompt 模板，你读完可以立刻去试。
+</p>
 
-  <ul>
-    <li>整理消息</li>
-    <li>管理任务</li>
-    <li>自动生成周报</li>
-    <li>分析 Excel</li>
-    <li>监控竞品</li>
-    <li>自动跑后台任务</li>
-  </ul>
+<h3>在开始之前，先说三件事</h3>
 
-  <p>
-    本文不讲理论，只讲能直接复制的工作流。
-  </p>
+<p><strong>第一，Codex 是什么。</strong></p>
 
-  <h2>场景一：自动生成周报</h2>
+<p>
+简单说：它是 OpenAI 推出的 AI Agent，基于对自然语言和源代码都做过训练的模型，
+对结构化指令的理解和结构化输出的生成，比普通 AI 助手更精准——它理解逻辑、序列和数据里的规律。
+</p>
 
-  <p>
-    每周五最痛苦的事情之一：
-    翻聊天记录、翻 Notion、翻会议纪要，
-    然后拼一份“看起来很忙”的周报。
-  </p>
+<p>
+对你来说，这意味着它处理“有规则、有结构、有重复性”的任务，比大多数工具更可靠。
+</p>
 
-  <h3>基础 Prompt</h3>
+<p><strong>第二，你需要什么权限。</strong></p>
 
-  <pre><code>你是一位职场写作助手，擅长把零散工作记录整理成周报。
+<p>
+2025 年新版 Codex 已包含在 ChatGPT Plus、Pro 和 Team 订阅中，无需额外付费。
+</p>
 
-请根据以下内容生成周报：
+<p><strong>第三，Codex 能力的两个层次。</strong></p>
 
-【粘贴工作记录】
+<p>
+本文分两个层次展开：
+前五个场景是“帮你想、帮你写”——你提供素材，它生成内容，你来执行；
+场景六是“帮你做”——Codex 直接操控电脑、在后台定时自动运行任务，你只需要审核结果。
+</p>
 
-结构：
+<p>
+前五个场景是基础，场景六是进阶，建议按顺序读。
+</p>
+
+<h2>场景一：周报、月报、汇报文档</h2>
+
+<p>
+每周五下午，你坐在电脑前，开始做同一件事：
+</p>
+
+<ul>
+<li>打开飞书或钉钉翻消息记录</li>
+<li>打开任务管理工具</li>
+<li>打开上周周报重新填</li>
+<li>检查措辞</li>
+<li>发给领导</li>
+</ul>
+
+<p>
+整个过程快则一小时，慢则两小时。
+</p>
+
+<p>
+格式几乎不变，结构几乎不变，需要的信息全部散落在你已经有的地方。
+</p>
+
+<h3>手动喂料版——把素材扔进去，拿回初稿</h3>
+
+<pre><code>你是一位职场写作助手，擅长把零散的工作记录整理成清晰的周报。
+
+我的工作记录如下：
+
+【粘贴原始记录】
+
+请按照以下结构生成一份周报初稿：
 1. 本周完成事项
 2. 进行中的事项
 3. 下周计划
-4. 需要支持事项
+4. 需要支持或决策的事项
+
+语气要求：
+专业但不过于正式，用词简洁，避免空话套话。</code></pre>
+
+<h3>进阶版——适合向上汇报</h3>
+
+<pre><code>请帮我把周报改写成适合汇报给部门负责人的版本。
 
 要求：
-- 专业简洁
-- 突出结果
-- 每部分不超过200字</code></pre>
+- 每条体现业务价值
+- 结果数据放前面
+- 删除空泛描述
+- 结尾总结核心成果</code></pre>
 
-  <h3>自动化版本</h3>
+<h3>文件直投版——直接上传文件</h3>
 
-  <p>
-    更进一步，你甚至可以让 Codex：
-  </p>
+<p>
+不想自己整理原始素材？
+</p>
 
-  <ul>
-    <li>自动读取日历</li>
-    <li>自动读取 Gmail</li>
-    <li>自动读取 Notion</li>
-    <li>每周五自动生成草稿</li>
-  </ul>
+<p>
+直接把会议纪要 PDF、任务 Excel、聊天记录 txt 文件全部上传给 Codex。
+</p>
 
-  <p>
-    你只负责最后看一眼。
-  </p>
+<p>
+它会自己读取后生成周报。
+</p>
 
-  <h2>场景二：Excel 数据处理</h2>
+<pre><code>我上传了以下文件：
 
-  <p>
-    大多数职场人不是不会分析数据，
-    而是不会 Excel 函数。
-  </p>
+- 本周会议纪要.docx
+- 任务完成情况.xlsx
+- 群聊记录.txt
 
-  <p>
-    Codex 最大的价值是：
-    你不用记公式。
-  </p>
+请读取这些文件，
+生成一份结构化周报。</code></pre>
 
-  <h3>自然语言写公式</h3>
+<h3>挂机自动版——Automations</h3>
 
-  <pre><code>我的 Excel 表：
+<p>
+最省力的方式：
+你什么都不用做。
+</p>
 
-A列：产品名
-B列：点击量
-C列：成交量
+<p>
+Codex 每周五自动读取：
+</p>
 
-请帮我写一个公式：
+<ul>
+<li>Google Calendar</li>
+<li>Notion</li>
+<li>Gmail</li>
+<li>Google Docs</li>
+</ul>
 
-计算转化率 = 成交量 / 点击量
-显示百分比
-保留两位小数
-点击量为0时显示“无数据”</code></pre>
+<p>
+然后自动生成周报草稿。
+</p>
 
-  <p>
-    Codex 会直接返回：
-  </p>
+<pre><code>每周五下午17:00自动执行：
 
-  <pre><code>=IF(B2=0,"无数据",TEXT(C2/B2,"0.00%"))</code></pre>
+1. 读取本周 Google Calendar
+2. 读取 Notion 项目更新
+3. 读取 Gmail
+4. 读取工作记录文档
 
-  <h3>更强的是：直接操作 Excel 文件</h3>
+生成周报草稿，
+发送到 Gmail 草稿箱。</code></pre>
 
-  <p>
-    你甚至可以上传 Excel 文件，
-    然后直接说：
-  </p>
+<h2>场景二：Excel / 表格数据处理</h2>
 
-  <pre><code>把转化率低于5%的行标红，
-新增汇总行，
-然后返回 result.xlsx</code></pre>
+<p>
+你有一个 Excel 表，领导让你：
+</p>
 
-  <h2>场景三：批量文件处理</h2>
+<blockquote>
+“分析一下这季度各渠道的转化率趋势。”
+</blockquote>
 
-  <p>
-    “每天重复做的事”，是最适合自动化的。
-  </p>
+<p>
+你知道应该用 VLOOKUP。
+但你记不住公式。
+</p>
 
-  <ul>
-    <li>批量重命名文件</li>
-    <li>合同信息提取</li>
-    <li>PDF 转 Excel</li>
-    <li>日报汇总</li>
-  </ul>
+<p>
+于是开始百度、试错、报错。
+</p>
 
-  <h3>合同信息提取</h3>
+<p>
+四十分钟过去了，
+你还没开始真正分析。
+</p>
 
-  <pre><code>读取文件夹中的合同 PDF，
-提取以下字段：
+<h3>自然语言写公式</h3>
 
+<pre><code>我的表格：
+
+A列：产品名称
+B列：点击次数
+C列：成交次数
+
+请帮我：
+在 D 列计算转化率，
+保留两位小数，
+点击量为0时显示“无数据”。</code></pre>
+
+<h3>数据清洗版</h3>
+
+<pre><code>我的 Excel 数据很乱：
+
+1. 姓名列有全角空格
+2. 手机号格式不统一
+3. 日期格式混乱
+
+请告诉我：
+- Excel 内置功能怎么处理
+- 如果用 Python，给我完整脚本</code></pre>
+
+<h3>文件直投版</h3>
+
+<p>
+直接上传 Excel 文件，
+让 Codex 修改后返回新文件。
+</p>
+
+<pre><code>请帮我：
+
+1. 新增转化率列
+2. 转化率低于5%的行标红
+3. 底部新增合计
+4. 返回 result.xlsx</code></pre>
+
+<h3>Computer Use 直接操作 Excel</h3>
+
+<p>
+更进一步：
+Codex 可以直接看到你的 Excel 界面。
+</p>
+
+<pre><code>@Computer 打开桌面上的 Q1报告.xlsx
+
+1. 插入数据透视表
+2. 按渠道汇总销售额
+3. 保存文件
+
+每步截图给我确认。</code></pre>
+
+<h2>场景三：批量文件处理</h2>
+
+<p>
+很多重复工作本质都是：
+结构固定、规则明确。
+</p>
+
+<p>
+比如：
+</p>
+
+<ul>
+<li>合同提取</li>
+<li>日报汇总</li>
+<li>批量重命名</li>
+<li>PDF 转 Excel</li>
+</ul>
+
+<h3>合同信息提取</h3>
+
+<pre><code>读取文件夹里的 PDF 合同：
+
+提取：
 - 合同编号
 - 甲方名称
 - 签约日期
 - 合同金额
 
-输出为 Excel 表格。</code></pre>
+输出为 Excel。</code></pre>
 
-  <p>
-    以前是实习生干的活。
-    现在是 AI 干。
-  </p>
+<h3>批量重命名</h3>
 
-  <h2>场景四：职场文档写作</h2>
+<pre><code>把图片统一重命名为：
 
-  <p>
-    大多数职场文档，
-    本质问题不是“不会写”，
-    而是“不知道怎么组织”。
-  </p>
+YYYYMMDD_序号.jpg
 
-  <p>
-    比如：
-  </p>
+规则：
+- 优先从文件名提取日期
+- 没有日期则读取创建时间</code></pre>
 
-  <ul>
-    <li>项目复盘</li>
-    <li>绩效自评</li>
-    <li>跨部门邮件</li>
-    <li>会议纪要</li>
-  </ul>
+<h3>Computer Use 处理内网系统</h3>
 
-  <h3>会议纪要 Prompt</h3>
+<p>
+很多公司的数据根本无法导出。
+</p>
 
-  <pre><code>请根据以下会议记录，
+<p>
+这时：
+Computer Use 是唯一解。
+</p>
+
+<pre><code>@Computer 打开公司 ERP 系统，
+
+导出：
+- 渠道A
+- 渠道B
+- 渠道C
+
+本周销售报表，
+保存到桌面。</code></pre>
+
+<h2>场景四：撰写职场文档</h2>
+
+<p>
+很多文档难写，
+不是因为没内容，
+而是因为“不知道怎么拿捏”。
+</p>
+
+<ul>
+<li>项目复盘</li>
+<li>绩效自评</li>
+<li>提案</li>
+<li>会议纪要</li>
+</ul>
+
+<h3>项目复盘</h3>
+
+<pre><code>请帮我写项目复盘报告。
+
+项目背景：
+【填入】
+
+项目目标：
+【填入】
+
+实际结果：
+【填入】
+
+输出结构：
+1. 项目概述
+2. 达成情况
+3. 问题分析
+4. 经验教训
+5. 改进行动</code></pre>
+
+<h3>会议纪要</h3>
+
+<pre><code>请根据以下原始记录，
 整理正式会议纪要：
 
 【粘贴原始记录】
 
-输出格式：
-1. 会议背景
+输出：
+1. 背景
 2. 讨论重点
 3. 决策事项
-4. 行动项
-5. 未决问题</code></pre>
+4. 行动项</code></pre>
 
-  <h2>场景五：竞品分析</h2>
+<div class="tip">
+关键心法：<br><br>
+给素材，不给命令。<br>
+把你脑子里的东西全部倒出来，
+哪怕很乱。<br>
+Codex 最擅长的是：
+从混乱里整理结构。
+</div>
 
-  <p>
-    以前做竞品分析：
-  </p>
+<h2>场景五：竞品与市场研究</h2>
 
-  <ul>
-    <li>开十几个网页</li>
-    <li>复制粘贴</li>
-    <li>截图</li>
-    <li>整理 PPT</li>
-  </ul>
+<p>
+以前做竞品分析：
+</p>
 
-  <p>
-    现在：
-  </p>
+<ul>
+<li>开十几个 Tab</li>
+<li>复制粘贴</li>
+<li>截图</li>
+<li>整理 PPT</li>
+</ul>
 
-  <pre><code>分析以下竞品：
+<p>
+现在：
+直接让 Codex 搜。
+</p>
+
+<h3>竞品分析 Prompt</h3>
+
+<pre><code>请分析以下竞品：
 
 1. 功能
 2. 定价
-3. 用户评价
+3. 用户口碑
 4. 最近动态
 
 输出：
@@ -336,80 +503,143 @@ C列：成交量
 - 每家总结
 - 对我们的启示</code></pre>
 
-  <p>
-    Codex 会自己联网搜索、整理、输出。
-  </p>
+<h3>客户背调</h3>
 
-  <h2>场景六：Codex 开始操作你的电脑</h2>
+<pre><code>我下周要拜访某公司。
 
-  <p>
-    这是最重要的一次变化。
-  </p>
+请整理：
+1. 公司背景
+2. 商业模式
+3. 最近动态
+4. 行业位置
+5. 合作机会</code></pre>
 
-  <p>
-    AI 不只是“帮你想”，
-    而是开始“帮你做”。
-  </p>
+<h3>Automation 自动监控竞品</h3>
 
-  <h3>Computer Use</h3>
+<pre><code>每周一上午9:00：
 
-  <p>
-    Codex 可以：
-  </p>
+监控竞品官网、博客、Twitter，
 
-  <ul>
-    <li>看到你的屏幕</li>
-    <li>操作鼠标键盘</li>
-    <li>点击按钮</li>
-    <li>填写表单</li>
-    <li>打开 ERP/OA</li>
-  </ul>
+整理：
+- 新功能
+- 定价变化
+- 重要公告
 
-  <pre><code>@Computer 打开 ERP 系统，
-导出本周销售报表，
-整理成 Excel，
-然后截图给我确认。</code></pre>
+生成简报发给我。</code></pre>
 
-  <p>
-    这已经不是聊天机器人了。
-  </p>
+<h2>场景六：Codex 操控你的电脑</h2>
 
-  <p>
-    这是数字员工。
-  </p>
+<p>
+这是最重要的一次变化。
+</p>
 
-  <h2>最后：Prompt 写得好，效率差十倍</h2>
+<p>
+AI 不再只是回答问题。
+</p>
 
-  <p>
-    OpenAI 官方总结了四件最重要的事：
-  </p>
+<p>
+而是：
+开始替你执行。
+</p>
 
-  <ul>
-    <li>上下文（背景）</li>
-    <li>输入素材</li>
-    <li>输出格式</li>
-    <li>约束条件</li>
-  </ul>
+<h3>Computer Use</h3>
 
-  <p>
-    翻译成人话就是：
-  </p>
+<p>
+Codex 可以：
+</p>
 
-  <ol>
-    <li>你是谁</li>
-    <li>你有什么</li>
-    <li>你想要什么</li>
-    <li>你不要什么</li>
-  </ol>
+<ul>
+<li>看到你的屏幕</li>
+<li>控制鼠标键盘</li>
+<li>打开应用</li>
+<li>填写表单</li>
+<li>点击按钮</li>
+</ul>
 
-  <div class="quote">
-    AI 不会替代会工作的人。<br/>
-    会用 AI 工作的人，会替代不会用 AI 工作的人。
-  </div>
+<h3>真实场景</h3>
 
-  <div class="footer">
-    © 2026 Codex 工作流整理 · HTML 阅读版
-  </div>
+<pre><code>@Computer 打开 OA 系统，
+
+按照 Excel 内容，
+录入差旅报销：
+
+- 日期
+- 金额
+- 类别
+- 项目编号
+
+每条保存后截图确认。</code></pre>
+
+<h3>后台浏览器自动工作</h3>
+
+<p>
+Codex 有自己的浏览器。
+</p>
+
+<p>
+不会占用你的 Chrome。
+</p>
+
+<p>
+它可以在后台：
+</p>
+
+<ul>
+<li>打开网站</li>
+<li>抓取信息</li>
+<li>填写表单</li>
+<li>监控价格</li>
+</ul>
+
+<h3>每日自动简报</h3>
+
+<pre><code>每天早上8:30：
+
+读取：
+- 日历
+- Slack
+- Gmail
+- Notion
+
+生成：
+1. 今日优先事项
+2. 待回复消息
+3. 待决策事项
+4. 重点提醒</code></pre>
+
+<h2>最后：Prompt 写得好，是这一切的核心</h2>
+
+<p>
+OpenAI 官方总结了四件最重要的事：
+</p>
+
+<ol>
+<li>上下文</li>
+<li>输入素材</li>
+<li>输出格式</li>
+<li>约束条件</li>
+</ol>
+
+<p>
+翻译成人话：
+</p>
+
+<ul>
+<li>你是谁</li>
+<li>你有什么</li>
+<li>你想要什么</li>
+<li>你不要什么</li>
+</ul>
+
+<blockquote>
+AI 不会替代会工作的人。<br>
+会用 AI 工作的人，
+会替代不会用 AI 工作的人。
+</blockquote>
+
+<div class="footer">
+© Codex 工作流整理版 · HTML 阅读页面
+</div>
 
 </div>
 
